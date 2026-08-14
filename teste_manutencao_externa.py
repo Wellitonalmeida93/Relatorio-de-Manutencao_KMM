@@ -10,7 +10,7 @@ USUARIO = os.getenv("KMM_USER", "matheusd")
 SENHA = os.getenv("KMM_PASS", "32825445M@")
 
 def extrair_e_enviar_sheets():
-    print("🚀 Iniciando extração do Relatório de Manutenção Externa (Modo Nuvem)...")
+print("🚀 Iniciando extração do Relatório de Manutenção Externa (Modo Nuvem)...")
     
     with sync_playwright() as p:
         # headless=True e viewport grande para não quebrar a tela no GitHub Actions
