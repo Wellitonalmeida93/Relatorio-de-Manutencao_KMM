@@ -31,3 +31,12 @@ jobs:
           KMM_USER: ${{ secrets.KMM_USER }}
           KMM_PASS: ${{ secrets.KMM_PASS }}
         run: python teste_manutencao_externa.py
+
+      # 👇 NOVO PASSO: Salva a imagem caso o script falhe 👇
+      - name: Salvar Prints de Erro
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prints-de-erro
+          path: ./*.png
+          retention-days: 5
